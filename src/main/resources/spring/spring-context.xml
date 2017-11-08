@@ -19,7 +19,7 @@
 	<import resource="spring-mvc.xml" />
 
 	<context:component-scan
-		base-package="com.test" />
+		base-package="com.test.*" />
 
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 

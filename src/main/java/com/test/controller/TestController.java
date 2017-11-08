@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/testhello")
-public class TestController {
-	@RequestMapping("/mvc")
+public class TestController  {
+	@RequestMapping("/mvc.do")
 	public String getTest(Model model){
 		model.addAttribute("message", "Hello girl!!");
 		return "test";
