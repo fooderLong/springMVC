@@ -14,5 +14,9 @@ public class TestController  {
 		model.addAttribute("message", "Hello girl!!");
 		return "test";
 	}
+	@RequestMapping("/transmit")
+	public String toTransmit(Model model){
+		return "transmitvalue";
+	}
 
 }

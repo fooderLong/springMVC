@@ -4,12 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>first</title>
+<title>test table</title>
 </head>
 <body>
-<h2>Hello My first project!</h2>
-<a href="../testhello/transmit.do" >测试传值</a>
-<a href="../testhello/mvc.do" >测试取值</a>
-<a href="../testTable/search.do">测试表格</a>
+
+	<table>
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+		<tr>
+			<td>${vo.contractNo }</td>
+			<td>${vo.opTypeCd }</td>
+		</tr>
+		
+	</table>
 </body>
 </html>

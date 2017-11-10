@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>quzhi</title>
 </head>
 <body>
-	<h2>${message }</h2>
+	<h2>这是从后台取的值：${message }</h2>
 </body>
 </html>

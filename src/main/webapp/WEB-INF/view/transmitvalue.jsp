@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>first</title>
+<title>transmitvalue</title>
 </head>
 <body>
-<h2>Hello My first project!</h2>
-<a href="../testhello/transmit.do" >测试传值</a>
-<a href="../testhello/mvc.do" >测试取值</a>
-<a href="../testTable/search.do">测试表格</a>
+	<form action="../login/login.do" method="get">
+		username:<input type="text" name="username" />
+		password:<input type="text" name="password"/>
+		<input type="submit" value="登录"/>
+	</form>
 </body>
 </html>
