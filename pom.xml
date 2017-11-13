@@ -74,6 +74,16 @@
 		<artifactId>proxool</artifactId>
 		<version>0.9.1</version>
 	</dependency>
+	<dependency>
+		<groupId>proxool</groupId>
+		<artifactId>cglib</artifactId>
+		<version>0.9.1</version>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.40</version>
+	</dependency>
 	
 		
     <dependency>
