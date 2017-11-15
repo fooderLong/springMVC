@@ -1,5 +1,7 @@
 package com.test.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +19,8 @@ public class TestTableController {
 	@RequestMapping("/search.do")
 	public String getTable(Model model){
 		Long key = (long) 119;
-		VendorContract vo = service.selectByPrimaryKey(key);
-		model.addAttribute("vo", vo);
+		List<VendorContract> list = service.selectByPrimaryKey(key);
+		model.addAttribute("vo", list);
 		return "testtable";
 		
 	}

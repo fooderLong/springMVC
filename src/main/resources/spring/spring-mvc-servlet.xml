@@ -21,22 +21,48 @@
      <context:component-scan base-package="com.test.dao"></context:component-scan>
     
     <mybatis:scan base-package="com.test.dao"/>
+     
     
      <bean id="handlerAdapter"  
         class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" /> 
-     
-    <bean id="viewResolver"  
+ 
+ 
+  <!--  整合freemarker -->  
+  <!--   <bean id="viewResolver"  
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         <property name="prefix" value="/WEB-INF/view/" />  
-        <property name="suffix" value=".jsp" />  
-    </bean>
+        <property name="suffix" value=".htm" />  
+    </bean> -->
+    
+    
+     <bean id="freeMarkerResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="contentType" value="text/html;charset=utf-8" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="cache" value="true" />
+		<property name="prefix" value="" />
+		<property name="suffix" value=".htm" />
+	</bean>
+    
+    <bean id="freemarkerConfigurer"  
+    class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
+    <property name="templateLoaderPath" value="/WEB-INF/view/"/>  
+    <property name="freemarkerSettings">  
+        <props>  
+			<prop key="output_encoding">UTF-8</prop>
+			<prop key="default_encoding">UTF-8</prop>
+			<prop key="number_format">#.##</prop>
+        </props>  
+    </property>  
+</bean>
+    
     
     
     	<bean id="dataSource_local" class="org.logicalcobwebs.proxool.ProxoolDataSource">
 		<property name="driver" value="com.mysql.jdbc.Driver" />
-		<property name="driverUrl" value="jdbc:mysql://192.168.1.207:60100/ofc?useUnicode=true&amp;characterEncoding=utf-8" />
-		<property name="user" value="wutaomgr" />
-		<property name="password" value="wutaomgr" />
+		<property name="driverUrl" value="jdbc:mysql://localhost:3600/test?useUnicode=true&amp;characterEncoding=utf-8" />
+		<property name="user" value="root" />
+		<property name="password" value="123456" />
 		<property name="alias" value="admin" />
 		<property name="houseKeepingTestSql" value="select 1" />
 		<property name="simultaneousBuildThrottle" value="20" />
@@ -55,16 +81,17 @@
 	</bean>
 
 	<!-- define the SqlSessionFactory -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource_local" />
 		<property name="configLocation" value="classpath:spring/mybatis-config.xml" />
-	</bean>
+	
+	</bean> 
 
-	<!-- <tx:annotation-driven transaction-manager="transactionManager" />
+	 <tx:annotation-driven transaction-manager="transactionManager" />
 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource_local" />
-	</bean> -->
+	</bean> 
       
 </beans>
